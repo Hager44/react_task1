@@ -1,4 +1,5 @@
 import './App.css';
+import React, { useState, useEffect } from 'react';
 import Navigation from './components/Navigation/navigation';
 import Airlines from './components/Airlines/Airlines';
 import Category from './components/Category/Category';
@@ -11,6 +12,12 @@ import Client from './components/Clients/Client';
 import Footer from './components/Footer/Footer';
 import Trips from './components/Trips/Trips';
 import Products from './components/Products/Products';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
+import { ref, uploadBytes, getDownloadURL, listAll } from 'firebase/storage';
+import { storage } from './components/Dashboard/firebaseConfig';
+import Read from './components/Dashboard/read';
+import DataTable from './components/Dashboard/Dashtable';
 import {
   rect19305,
   ellipse623,
@@ -25,6 +32,7 @@ import {
   rect19310,
   ellipse628,
 } from './imported_images/importedImages';
+
 
 function App() {
   const items=[
@@ -95,21 +103,94 @@ function App() {
       text:"Nam exercitationem commodi et ducimus quia in dolore animi sit mollitia amet id quod eligendi. Et labore harum non nobis ipsum eum molestias mollitia et corporis praesentium a laudantium internos."
     }
   ];
+  const [data, setData] = useState([]);
+  const [newData, setNewData] = useState({ id: '', days: '', people: '', city: '', country: '', priceAfter: '', priceBefore: '', text: '' });
+  const [isAdding, setIsAdding] = useState(false);
+  const [editItem, setEditItem] = useState(null);
+  const [imageUpload, setImageUpload] = useState(null);
+  const [imageUrls, setImageUrls] = useState([]);
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
+
+  const imagesListRef = ref(storage, `images/`);
+
+
+  useEffect(() => {
+    // Fetch image URLs and set them in the state
+    const fetchImageUrls = async () => {
+      const urls = [];
+      const response = await listAll(imagesListRef);
+      for (const item of response.items) {
+        const url = await getDownloadURL(item);
+        urls.push(url);
+      }
+      setImageUrls(urls);
+      setIsLoading(false); // Set loading to false when URLs are fetched
+    };
+
+    fetchImageUrls(); // Call the function to fetch image URLs
+  }, []);
+
+  useEffect(() => {
+    // Fetch data when the component mounts
+    axios.get('https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours')
+      .then((response) => {
+        // Combine data with image URLs
+        const newData = response.data.map((item, index) => ({
+          ...item,
+          image: imageUrls[index], // Use the corresponding image URL
+        }));
+        setData(newData);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, [imageUrls]); 
+  if (isLoading) {
+    return <div>Images are Loading...</div>;
+  }
   return (
     <div>
-      <Navigation/>
-      <Airlines/>
-      <Category/>
-      <Services/>
-      <HoneymoonSpecials/>
-      <Trips/>
-      <Sepratir/>
-      <Promotion/>
-      <Explore/>
-      <Products products={items}/>
-      <Client/>
-      <Footer/>
-      
+    
+      <BrowserRouter>
+      <Routes>
+      <Route path="/"  element={
+      <div>
+        <Navigation/>
+        <Airlines/>
+        <Category/>
+        <Services/>
+        <HoneymoonSpecials/>
+        <Trips/>
+        <Sepratir/>
+        <Promotion/>
+        <Explore/>
+        <Products products={data}/>
+        <Client/>
+        <Footer/>
+      </div>
+      }
+      />
+      <Route path="/dashboard"  element={<DataTable />}/>
+      <Route path="/read/:id" element={<Read />} />
+      <Route path="/Home"  element={
+      <div>
+        <Navigation/>
+        <Airlines/>
+        <Category/>
+        <Services/>
+        <HoneymoonSpecials/>
+        <Trips/>
+        <Sepratir/>
+        <Promotion/>
+        <Explore/>
+        <Products products={data}/>
+        <Client/>
+        <Footer/>
+      </div>
+      }
+      />
+      </Routes>
+      </BrowserRouter>
       
       
     </div>

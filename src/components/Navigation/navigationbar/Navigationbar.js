@@ -1,6 +1,6 @@
 import React from "react";
 import './Navigationbar.css';
-
+import { Link } from 'react-router-dom'; 
 import arrow from '../../New_folder/Arrow05_(1).png';
 function Navigationbar(){
     const dropdownMenuStyle = {
@@ -65,6 +65,9 @@ function Navigationbar(){
           </button>
         <div className="collapse navbar-collapse "  id="main-nav" >
             <ul className="navbar-nav">
+            <li className="nav-item">
+            <Link to="/dashboard" className="nav-link text-white" style={navTextStyle}>Dashboard</Link>
+              </li>
               <li className="nav-item">
                 <a className="nav-link text-white" href="#topics" style={navTextStyle}>Home</a>
               </li>
