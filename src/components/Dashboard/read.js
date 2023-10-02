@@ -11,7 +11,7 @@ const Read = () => {
   const initialImageURL = location.state ? location.state.imageURL : null; // Check if location.state is defined
   const [imageURL, setImageURL] = useState(initialImageURL);
   const [itemData, setItemData] = useState(null);
-
+ 
   useEffect(() => {
     if (!initialImageURL) {
       // If initialImageURL is null, set it to an empty string or some default value
@@ -40,12 +40,13 @@ const Read = () => {
         console.error("Error fetching item data:", error);
       });
   }, [id, initialImageURL]);
+  
 
   return (
     <div>
       <h1 style={{ color: "red",display:"inline" }}>Item Details:</h1>
-      <button className="ms-3 me-3">
-      <Link to={"/Home"}  style={{ textDecoration: 'none', color: 'black' }}>Home page</Link>
+      <button  className="ms-3 me-3"  >
+      <Link to={"/Home"} style={{ textDecoration: 'none', color: 'black' }}>Home page</Link>
       </button>
       <button className="ms-3">
       <Link to={"/dashboard"}  style={{ textDecoration: 'none', color: 'black' }}>Package table</Link>

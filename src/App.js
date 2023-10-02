@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect,useRef } from 'react';
 import Navigation from './components/Navigation/navigation';
 import Airlines from './components/Airlines/Airlines';
 import Category from './components/Category/Category';
@@ -35,6 +35,7 @@ import {
 
 
 function App() {
+  
   const items=[
     {
       countryFlag:<img src={rect19305} style={{maxWidth:'100%'}} alt="r"/>,
@@ -110,9 +111,8 @@ function App() {
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // Add loading state
-
   const imagesListRef = ref(storage, `images/`);
-
+  const productsRef = useRef(null);
 
   useEffect(() => {
     // Fetch image URLs and set them in the state
@@ -145,9 +145,11 @@ function App() {
         console.error('Error fetching data:', error);
       });
   }, [imageUrls]); 
+ 
   if (isLoading) {
     return <div>Images are Loading...</div>;
   }
+ 
   return (
     <div>
     
@@ -183,7 +185,10 @@ function App() {
         <Sepratir/>
         <Promotion/>
         <Explore/>
-        <Products products={data}/>
+        <div id="products">
+  <Products ref={productsRef} products={data} />
+</div>
+      
         <Client/>
         <Footer/>
       </div>
