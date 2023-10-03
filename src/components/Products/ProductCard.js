@@ -5,12 +5,14 @@ import star from "../New_folder/bi_star-fill.png";
 import location from "../New_folder/ep_location.png";
 function ProductCard(props){
 return(
-    <div className="col-lg-4  my-4 trips-countries">
+    <div className="col-lg-4   trips-countries">
     <div style={{position: 'relative'}}>
     <img src={props.product.image} alt="image"/>
+    {props.index < props.countrySymbols.length ? (
+          <img src={props.countrySymbols[props.index].countrySymbol} alt="symbolimage" style={{ marginTop: "-3rem" }} />
+        ) : null}
     </div>
-      <div className="card-body text-start mt-4 position-relative">
-      {props.product.countrySymbol} 
+      <div className="card-body text-start  position-relative mb-5" style={{marginTop:"-2rem"}}>
         <img src={vector1} alt=""/>
         <h6 className="display-6 d-inline ms-1" style={{color: '#7D7D7D',fontFamily:'Poppins, sans-serif', fontWeight: 400,fontSize: '16px'}}>{props.product.days} days</h6>
         <img src={vector2} alt="" className="ms-4"/>

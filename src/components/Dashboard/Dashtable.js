@@ -206,12 +206,12 @@ function DataTable() {
     // Use the image path stored in your API data
     const imagePath = item.image;
   
-    // Delete the image from Firebase Storage using the correct path
+    // Delete the image from Firebase Storage 
     const imageRef = ref(storage, imagePath);
   
     deleteObject(imageRef)
       .then(() => {
-        // If image deletion is successful, then proceed to delete the data from the API
+        // If image deletion is successful delete the data from the API
         axios
           .delete(`https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours/${item.id}`)
           .then(() => {
