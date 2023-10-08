@@ -181,7 +181,7 @@ return(
   <div class="container-lg ">
     <div class="row my-5  align-items-center justify-content-center">
     {props.products.map((product, index) => (
-          <ProductCard key={index} product={product} countrySymbols={countrySymbols} index={index} />
+          <ProductCard key={index} product={product}  />
         ))}
         
 

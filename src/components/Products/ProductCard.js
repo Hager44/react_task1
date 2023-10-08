@@ -5,12 +5,11 @@ import star from "../New_folder/bi_star-fill.png";
 import location from "../New_folder/ep_location.png";
 function ProductCard(props){
 return(
-    <div className="col-lg-4   trips-countries">
+    <div className="col-lg-4   trips-countries " style={{maxHeight:'615px',marginBottom:"7rem"}}>
     <div style={{position: 'relative'}}>
-    <img src={props.product.image} alt="image"/>
-    {props.index < props.countrySymbols.length ? (
-          <img src={props.countrySymbols[props.index].countrySymbol} alt="symbolimage" style={{ marginTop: "-3rem" }} />
-        ) : null}
+    <img src={props.product.image} alt="image" style={{width:"100%"}}/>
+    <img src={props.product.city1} alt="symbolimage" style={{ marginTop: "-3rem" }} />
+      
     </div>
       <div className="card-body text-start  position-relative mb-5" style={{marginTop:"-2rem"}}>
         <img src={vector1} alt=""/>
@@ -31,8 +30,8 @@ return(
         <img src={location} alt=""/>
         <h6 className="display-6 d-inline " style={{color: '#7D7D7D',fontFamily:'Poppins, sans-serif', fontWeight: 400,fontSize: '16px'}}>{props.product.country}</h6>
         <br/>
-        <p className="display-5 fw-bold d-inline me-3 ms-2 " style={{color: '#DF6951',fontFamily:'Poppins, sans-serif', fontWeight: 500,fontSize: '29px'}}>{props.product.priceBefore}$</p>
-        <p className="display-5 fw-bold d-inline" style={{textDecoration: 'line-through', color:'#7D7D7D',fontFamily:'Poppins, sans-serif', fontWeight: 500,fontSize: '22px'}}>{props.product.priceAfter}</p>
+        <p className="display-5 fw-bold d-inline me-3 ms-2 " style={{color: '#DF6951',fontFamily:'Poppins, sans-serif', fontWeight: 500,fontSize: '29px'}}>{props.product.priceAfter}$</p>
+        <p className="display-5 fw-bold d-inline" style={{textDecoration: 'line-through', color:'#7D7D7D',fontFamily:'Poppins, sans-serif', fontWeight: 500,fontSize: '22px'}}>{props.product.priceBefore}</p>
         <p className="card-text ms-2 mt-2 d-none d-lg-block" style={{fontFamily:'Poppins, sans-serif', fontWeight:400,fontSize:'12px',color: 'black',letterSpacing:'2px'}}>{props.product.text}</p>
         <a href="#" className="btn btn-lg mt-1" style={{backgroundColor: '#DF6951',color: 'white'}}>
           Explore Now

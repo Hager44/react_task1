@@ -15,7 +15,7 @@ const Read = () => {
   useEffect(() => {
     if (!initialImageURL) {
       // If initialImageURL is null, set it to an empty string or some default value
-      setImageURL(""); // You can set this to a default image URL if needed
+      setImageURL(""); 
     }
 
     const imageRef = ref(storage, `images/${id}.png`);
@@ -46,7 +46,7 @@ const Read = () => {
     <div>
       <h1 style={{ color: "red",display:"inline" }}>Item Details:</h1>
       <button  className="ms-3 me-3"  >
-      <Link to={"/Home"} style={{ textDecoration: 'none', color: 'black' }}>Home page</Link>
+      <Link to={"/"} style={{ textDecoration: 'none', color: 'black' }}>Home page</Link>
       </button>
       <button className="ms-3">
       <Link to={"/dashboard"}  style={{ textDecoration: 'none', color: 'black' }}>Package table</Link>
@@ -64,6 +64,7 @@ const Read = () => {
                 <th>Price After</th>
                 <th>Price Before</th>
                 <th>Text</th>
+                <th>Flag</th>
                 <th>Image</th>
               </tr>
             </thead>
@@ -77,6 +78,11 @@ const Read = () => {
                 <td>{itemData.priceAfter}$</td>
                 <td>{itemData.priceBefore}$</td>
                 <td>{itemData.text}</td>
+                <td> <img src={itemData.city1} 
+                alt={`Image for ${itemData.city}`}
+                 width="100" 
+                 />
+                 </td>
                 <td>
                   <img
                     src={itemData.image}

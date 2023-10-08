@@ -37,11 +37,13 @@ function Navigationbar(){
         color: 'white',
         borderRadius: '0%',
       };
+     
+     
     return(
         <section className="navigation-bar">
     <nav className="navbar navbar-expand-lg navbar-dark  pb-4">
      <div className="container">
-      <a className="navbar-brand" href="#intro">
+      <Link to='/' className="navbar-brand" href="#intro">
 
       <div className="container">
              <div className="row">
@@ -58,7 +60,7 @@ function Navigationbar(){
             </div>
         </div>
        
-        </a>
+        </Link>
     
         <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -69,7 +71,9 @@ function Navigationbar(){
             <Link to="/dashboard" className="nav-link text-white" style={navTextStyle}>Dashboard</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#topics" style={navTextStyle}>Home</a>
+               
+                <Link to="/" className="nav-link text-white"  style={navTextStyle}>Home</Link>
+               
               </li>
               <li className="nav-item">
                 <a className="nav-link text-white" href="#reviews" style={navTextStyle}>About</a>

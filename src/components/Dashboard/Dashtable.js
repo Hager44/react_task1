@@ -1,23 +1,29 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useState, useEffect,useRef } from 'react';
 import { Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { ref, uploadBytes, getDownloadURL, listAll, deleteObject } from 'firebase/storage';
 import { storage } from './firebaseConfig';
-import { v4 } from 'uuid';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function DataTable() {
   const [data, setData] = useState([]);
-  const [newData, setNewData] = useState({ id: '', days: '', people: '', city: '', country: '', priceAfter: '', priceBefore: '', text: '', image: '' });
+  const [newData, setNewData] = useState({ id: '', days: '', people: '', city: '', country: '', priceAfter: '', priceBefore: '', text: '',city1:'',image: '' });
   const [isAdding, setIsAdding] = useState(false);
   const [editItem, setEditItem] = useState(null);
-  const [imageUpload, setImageUpload] = useState(null);
+  const [imageUpload, setImageUpload] = useState(null);//is used for the image select
   const [imageUrls, setImageUrls] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [oldImageName, setOldImageName] = useState('');
   const imagesListRef = ref(storage, 'images/');
   const [isediting,setIsEditing]=useState(false);
-
+  const modalRef = useRef(null);//to refrence modal from more than one place (for opening it)
+  const [previewImageUrl, setPreviewImageUrl] = useState('');//is defined to force re-render of component after inserting new package
+  
+  //fetching images from fire base storage
   useEffect(() => {
     const fetchImageUrls = async () => {
       const urls = [];
@@ -26,63 +32,66 @@ function DataTable() {
         const url = await getDownloadURL(item);
         urls.push(url);
       }
-      setImageUrls(urls);
-      setIsLoading(false);
+      setImageUrls(urls);//saving the image url from fire base storage
+      setIsLoading(false);//to indicate that images haven't loaded yet from firebase storage
     };
 
     fetchImageUrls();
-  }, []);
+  }, [previewImageUrl]);//forcing re-rendering the component if a new image is added 
 
+
+
+  //this useeffect is used for fetching data from mock api and then combine it with images stored in firebase storage
   useEffect(() => {
-    axios.get('https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours')
+    axios.get('https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours')//getting data from mock api
       .then((response) => {
         const newData = response.data.map((item, index) => ({
           ...item,
           image: imageUrls[index],
         }));
-        setData(newData);
+        setData(newData);//newData is storing the data from mock api combined with images from firebase storage
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, [imageUrls]);
+  }, [imageUrls,previewImageUrl]);//rerender each time image has been added or changed
 
+  //uploading new images on firebase in case of adding new package and replacing an existing image in case of updating existing image  
   const uploadFile = async (existingImagePath) => {
-    let oldImageName = '';
+  
+    let oldImageName = '';//old image name is used in case of updating existing image as the new image is named after the old one
     if (existingImagePath) {
       const decodedPath = decodeURIComponent(existingImagePath);
       
-      // Split the decoded path using '?' and get the first part (before the '?')
+      // Split the decoded path using ? and get the part before ?
       const pathSegments = decodedPath.split('?')[0];
       
-      // Now, extract the image name from the last segment
+      // extracting  image name from the last segment
       oldImageName = pathSegments.split('/').pop();
     }
-    const timestamp = Date.now();
+    const timestamp = Date.now();//time stamp is used in case of adding new image to ensure that the new image is stored in the last place in firebase storage
     const imageName = oldImageName || `${timestamp}_${imageUpload.name}`;
   
-    const imageRef = ref(storage, `images/${imageName}`);
+    const imageRef = ref(storage, `images/${imageName}`);//reference of the location of images in firebase
   
     try {
-      const snapshot = await uploadBytes(imageRef, imageUpload);
-      const url = await getDownloadURL(snapshot.ref);
+      const snapshot = await uploadBytes(imageRef, imageUpload);//Firebase Storage method used to upload binary data to a certain storage location
+      const url = await getDownloadURL(snapshot.ref);//getting url for images from firebase
   
-      setNewData({ ...newData, image: url });
-
-      
-      
-    
-      axios
-        .put(`https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours/${editItem.id}`, {
+      setNewData({ ...newData, image: url });//updating the new data combined with images from firebase
+      setPreviewImageUrl(url);
+    if(editItem!==null){ //case of editing existing image
+       axios.put(`https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours/${editItem.id}`, { //updating data in mock api
           ...newData,
           image: url,
         })
         .then((response) => {
+          
           const updatedData = data.map((item) =>
-            item.id === response.data.id ? { ...response.data } : item
+            item.id === response.data.id ? { ...response.data } : item //replacing the old data with the new one
           );
-          setData(updatedData);
-          setNewData({
+          setData(updatedData);//changing old data to the updated data
+          setNewData({  //setting newdata to default
             id: '',
             days: '',
             people: '',
@@ -91,53 +100,74 @@ function DataTable() {
             priceAfter: '',
             priceBefore: '',
             text: '',
+            city1:'',
             image: '',
+          });
+          toast.success('data updated successfully!', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
           });
           setIsAdding(false);
           setEditItem(null);
         })
+      
+      
         .catch((error) => {
           console.error('Error updating data:', error);
         });
+      }
     } catch (error) {
       console.error('Error uploading image:', error);
     }
   };
-
+   //when adding button is clicked
   const handleAddClick = () => {
-    setIsAdding(true);
+    setIsAdding(true);//to open Modal
+    setEditItem(null);//to indicate that's adding not editing
+    setNewData({
+      id: '',
+      days: '',
+      people: '',
+      city: '',
+      country: '',
+      priceAfter: '',
+      priceBefore: '',
+      text: '',
+      city1:'',
+      image: '',
+    });
+   
   };
 
-  const handleUploadClick = async () => {
-    if(isediting===true){
-    if (imageUpload !== null) {
-      const existingImagePath = editItem.image;
-      deleteObject(ref(storage, existingImagePath))
-        .then(() => {
-          uploadFile(existingImagePath);
-        })
-        .catch((error) => {
-          console.error('Error deleting existing image:', error);
-        });
-    }
-    setIsEditing(false);
-  }
-  else {
-    const imageUrl = await uploadFile();
-
-    if (imageUrl !== null) {
-      setNewData({ ...newData, image: imageUrl });
-      setImageUpload(null); // Clear the image upload input
-    }
-
-  }
-  };
-
+  //is called when save/update button is clicked
   const handleSaveClick = async () => {
+    //case of save button
     if (editItem === null) {
-      axios
-        .post('https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours', newData)
-        .then((response) => {
+      const imageUrl = await uploadFile();//wait until image is uploaded on firebase
+
+      if (imageUrl !== null) {
+        setNewData({ ...newData, image: imageUrl });//in case there is new image
+        setImageUpload(null); 
+        toast.success('new image uploaded successfully on firebase!', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+      }
+      //post the new data on mockapi
+      axios.post('https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours', newData).then((response) => { 
+          
           setData([...data, response.data]);
           setNewData({
             id: '',
@@ -148,27 +178,61 @@ function DataTable() {
             priceAfter: '',
             priceBefore: '',
             text: '',
+            city1:'',
             image: '',
           });
-          setIsAdding(false);
+          toast.success('new package is added successfully!', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: 'light',
+          });
+          setIsAdding(false);//adding process is over
         })
         .catch((error) => {
+          
           console.error('Error saving data:', error);
         });
-    } else {
-      if (imageUpload !== null) {
-        const existingImagePath = editItem.image;
-        deleteObject(ref(storage, existingImagePath))
+    } else { //in case of upload button
+      if (imageUpload !== null) { //in case of editing image
+         setImageUpload(null);
+        const existingImagePath = editItem.image; //saving url of old image
+        deleteObject(ref(storage, existingImagePath))//delete old image from firebase storage
           .then(() => {
-            uploadFile(existingImagePath);
+            uploadFile(existingImagePath);//upload new data
+            toast.success('image uploaded on firebase successfully!', {
+              position: 'top-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'light',
+            });
           })
           .catch((error) => {
             console.error('Error deleting existing image:', error);
           });
-      } else {
+         
+      } else { //in case of editing data
         axios
           .put(`https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours/${editItem.id}`, newData)
           .then((response) => {
+            toast.success('data updated successfully!', {
+              position: 'top-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'light',
+            });
             const updatedData = data.map((item) =>
               item.id === response.data.id ? { ...response.data } : item
             );
@@ -182,6 +246,7 @@ function DataTable() {
               priceAfter: '',
               priceBefore: '',
               text: '',
+              city1:'',
               image: '',
             });
             setIsAdding(false);
@@ -193,28 +258,50 @@ function DataTable() {
       }
     }
   };
-
+  //is called when edit button is clicked
   const handleEditClick = (item) => {
     setIsAdding(true);
     setEditItem(item);
     setNewData({ ...item });
     setOldImageName(item.image.split('/').pop());
     setIsEditing(true);
+    
   };
-
+  //is called when delete button is clicked
   const handleDeleteClick = (item) => {
-    // Use the image path stored in your API data
+    // Use the image path stored 
     const imagePath = item.image;
-  
     // Delete the image from Firebase Storage 
     const imageRef = ref(storage, imagePath);
   
     deleteObject(imageRef)
       .then(() => {
         // If image deletion is successful delete the data from the API
+        toast.success('Image deleted from Firebase Storage!', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+        
         axios
           .delete(`https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours/${item.id}`)
           .then(() => {
+            toast.success('Data deleted from the API!', {
+              position: 'top-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'light',
+            });
+           
             const updatedData = data.filter((d) => d.id !== item.id);
             setData(updatedData);
           })
@@ -228,78 +315,121 @@ function DataTable() {
   };
 
   if (isLoading) {
-    return <div>Images are Loading...</div>;
+    return <div style={{color:"white"}}>Images are Loading...</div>;
   }
 
   return (
-    <div>
-      <h1 style={{ color: 'red' ,display:'inline'}}>Travel Packages:</h1>
-      <button className="ms-3">
-      <Link to={"/Home"}  style={{ textDecoration: 'none', color: 'black' }}>Home page</Link>
-      </button>
-      <br/>
-      <button onClick={handleAddClick} className="my-3">Add new package</button>
+    <div class="container">
       
+    
+<button type="button"  onClick={handleAddClick} className="btn btn-primary my-3" data-bs-target="#exampleModal" data-bs-toggle="modal">
+Add new package
+</button>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={modalRef}>
+  <div class="modal-dialog">
+    <div class="modal-content" style={{backgroundColor:'aliceblue'}}>
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{editItem ? `Editing ${newData.country} Package` : 'Adding New Package'}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
       {isAdding && (
         <div>
           <input
             type="text"
-            placeholder="ID"
-            value={newData.id}
-            onChange={(e) => setNewData({ ...newData, id: e.target.value })}
-          />
-          <input
-            type="text"
-            placeholder="days"
+            placeholder="number of days"
             value={newData.days}
             onChange={(e) => setNewData({ ...newData, days: e.target.value })}
           />
           <input
             type="text"
-            placeholder="people"
+            placeholder="number of people going"
             value={newData.people}
             onChange={(e) => setNewData({ ...newData, people: e.target.value })}
           />
           <input
             type="text"
-            placeholder="city"
+            placeholder="capital name"
             value={newData.city}
             onChange={(e) => setNewData({ ...newData, city: e.target.value })}
           />
           <input
             type="text"
-            placeholder="country"
+            placeholder="country name"
             value={newData.country}
             onChange={(e) => setNewData({ ...newData, country: e.target.value })}
           />
           <input
             type="text"
-            placeholder="priceAfter"
+            placeholder="price After discount"
             value={newData.priceAfter}
             onChange={(e) => setNewData({ ...newData, priceAfter: e.target.value })}
           />
           <input
             type="text"
-            placeholder="priceBefore"
+            placeholder="price Before discount"
             value={newData.priceBefore}
             onChange={(e) => setNewData({ ...newData, priceBefore: e.target.value })}
           />
-          <input
+          <textarea
             type="text"
-            placeholder="text"
+            placeholder="Package Description"
             value={newData.text}
             onChange={(e) => setNewData({ ...newData, text: e.target.value })}
+            cols={50}
+            rows={5}
           />
+          <label htmlFor='flag' className="mt-3">insert flag image: </label>
+          <input
+           type="file"
+           id='flag'
+           onChange={(event) => {
+           const file = event.target.files[0];
+           if (file) {
+           const reader = new FileReader();
+           reader.onload = (e) => {
+        
+           const imageUrl = e.target.result;//this contains the url of the uploaded image
+           setNewData({ ...newData, city1: imageUrl });
+                                   };
+          reader.readAsDataURL(file);
+                     }
+                                }
+             }
+          />
+          <br/>
+          <label htmlFor='countryimage' className="mt-3">insert symbol image:</label>
           <input
             type="file"
+            id='countryimage'
             onChange={(event) => {
               setImageUpload(event.target.files[0]);
             }}
           />
-          <button onClick={handleUploadClick}>Upload Image</button>
-          <button onClick={handleSaveClick}>{editItem ? 'Update' : 'Save'}</button>
+            
+          
         </div>
       )}
+      </div>
+      <div class="modal-footer">
+     
+
+          <button data-bs-dismiss="modal" onClick={handleSaveClick} style={{marginLeft:'auto',marginRight:'auto'}}>{editItem ? 'Update' : 'Save'}</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+      
+      
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -311,6 +441,7 @@ function DataTable() {
             <th>Price After</th>
             <th>Price Before</th>
             <th>Text</th>
+            <th>Flag</th>
             <th>Image</th>
             <th>Actions</th>
           </tr>
@@ -327,10 +458,14 @@ function DataTable() {
               <td>{item.priceBefore}$</td>
               <td>{item.text}</td>
               <td>
+                <img src={item.city1} alt={`Image for ${item.city}`} width="100" />
+              </td>
+             
+              <td>
                 <img src={item.image} alt={`Image for ${item.city}`} width="100" />
               </td>
               <td>
-                <Button variant="primary" size="sm" onClick={() => handleEditClick(item)}>
+                <Button variant="primary" data-bs-target="#exampleModal" data-bs-toggle="modal" size="sm" onClick={() => handleEditClick(item)}>
                   Edit
                 </Button>
                 <Button variant="danger" size="sm" onClick={() => handleDeleteClick(item)}>
@@ -352,6 +487,7 @@ function DataTable() {
       </Table>
     </div>
   );
+
 }
 
 export default DataTable; 
