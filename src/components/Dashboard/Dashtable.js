@@ -348,7 +348,7 @@ const[deleteall,setdeleteall]=useState(false);
       }
   
      
-      toast.success('All items deleted successfully!', {
+      toast.info('All items deleted successfully!', {
         position: 'top-center',
         autoClose: 5000,
         hideProgressBar: false,
