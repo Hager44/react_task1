@@ -22,6 +22,7 @@ function DataTable() {
   const [isediting,setIsEditing]=useState(false);
   const modalRef = useRef(null);//to refrence modal from more than one place (for opening it)
   const [previewImageUrl, setPreviewImageUrl] = useState('');//is defined to force re-render of component after inserting new package
+const[deleteall,setdeleteall]=useState(false);
   
   //fetching images from fire base storage
   useEffect(() => {
@@ -267,6 +268,7 @@ function DataTable() {
     setIsEditing(true);
     
   };
+
   //is called when delete button is clicked
   const handleDeleteClick = (item) => {
     // Use the image path stored 
@@ -291,6 +293,7 @@ function DataTable() {
         axios
           .delete(`https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours/${item.id}`)
           .then(() => {
+            
             toast.success('Data deleted from the API!', {
               position: 'top-center',
               autoClose: 5000,
@@ -311,8 +314,65 @@ function DataTable() {
       })
       .catch((error) => {
         console.error('Error deleting image from Firebase Storage:', error);
+     
       });
   };
+  
+  const handleDeleteAllClick = async () => {
+    setdeleteall(true); 
+    try {
+      for (const item of data) {
+        const imagePath = item.image;
+        const imageRef = ref(storage, imagePath);
+
+        // Delete the image from Firebase Storage
+        await deleteObject(imageRef);
+  
+        // Delete the data from the Mock API
+        await axios.delete(`https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours/${item.id}`);
+  
+        // Updating data state
+        setData((prevData) => prevData.filter((d) => d.id !== item.id));
+  
+        
+        toast.success('Item deleted successfully!', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+        });
+      }
+  
+     
+      toast.success('All items deleted successfully!', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
+    } catch (error) {
+      console.error('Error deleting items:', error);
+    } finally {
+      setdeleteall(false); 
+    }
+  };
+  
+  
+  
+
+ 
+ 
+  
+  
+  
 
   if (isLoading) {
     return <div style={{color:"white"}}>Images are Loading...</div>;
@@ -320,12 +380,12 @@ function DataTable() {
 
   return (
     <div class="container">
-      
-    
+<div style={{display:"flex",justifyContent:"space-around"}}>
 <button type="button"  onClick={handleAddClick} className="btn btn-primary my-3" data-bs-target="#exampleModal" data-bs-toggle="modal">
 Add new package
 </button>
-
+<button type='button' onClick={handleDeleteAllClick} className="btn btn-danger mx-3 my-3">delete all packages</button>
+</div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={modalRef}>
   <div class="modal-dialog">
