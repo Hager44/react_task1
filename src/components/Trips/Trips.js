@@ -18,7 +18,7 @@ return(
   <div className="container mt-2">
     <div className="row">
       <div className="col-md-2 col-sm-8">
-        <img src={group7} alt="rectangle" className="img-fluid"/>
+        <img src={group7} alt="rectangle" className="img-fluid" width="48" height="47"/>
       </div>
       <div className="col-md-10 col-sm-4">
         <div className="d-flex flex-column justify-content-center h-100">
@@ -32,7 +32,7 @@ return(
   <div className="container mt-2">
     <div className="row">
       <div className="col-md-2 col-sm-8">
-        <img src={group12} alt="rectangle" className="img-fluid"/>
+        <img src={group12} alt="rectangle" className="img-fluid" width="48" height="47"/>
       </div>
       <div className="col-md-10 col-sm-4">
         <div className="d-flex flex-column justify-content-center h-100">
@@ -46,7 +46,7 @@ return(
   <div className="container mt-2">
     <div className="row">
       <div className="col-md-2 col-sm-8">
-        <img src={group11} alt="rectangle" className="img-fluid"/>
+        <img src={group11} alt="rectangle" className="img-fluid" width="48" height="47"/>
       </div>
       <div className="col-md-10 col-sm-4">
         <div className="d-flex flex-column justify-content-center h-100">
@@ -65,7 +65,7 @@ return(
   <div className="container mt-2">
     <div className="row">
       <div className="col-md-2 col-sm-8">
-        <img src={group7} alt="rectangle" className="img-fluid"/>
+        <img src={group7} alt="rectangle" className="img-fluid" width="48" height="47"/>
       </div>
       <div className="col-md-10 col-sm-4">
         <div className="d-flex flex-column justify-content-center h-100">
@@ -79,7 +79,7 @@ return(
   <div className="container mt-2">
     <div className="row">
       <div className="col-md-2 col-sm-8">
-        <img src={group12} alt="rectangle" className="img-fluid"/>
+        <img src={group12} alt="rectangle" className="img-fluid" width="48" height="47"/>
       </div>
       <div className="col-md-10 col-sm-4">
         <div className="d-flex flex-column justify-content-center h-100">
@@ -93,7 +93,7 @@ return(
   <div className="container mt-2">
     <div className="row">
       <div className="col-md-2 col-sm-8">
-        <img src={group11} alt="rectangle" className="img-fluid"/>
+        <img src={group11} alt="rectangle" className="img-fluid" width="48" height="47"/>
       </div>
       <div className="col-md-10 col-sm-4">
         <div className="d-flex flex-column justify-content-center h-100">

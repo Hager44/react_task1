@@ -23,7 +23,7 @@ function Services(){
         <div className="row-white-box position-relative">
           
           <img src={second_img} alt="second-image" className="position-absolute mt-5 rectangle0 rectangle0_1"/>
-          <img src={tour_guide} alt="travelling" className="ms-5 tour_guide"/>
+          <img src={tour_guide} alt="travelling" className="ms-5 tour_guide" width="72" height="72"/>
           
           <h5 className="display-5" style={{fontFamily:'Poppins,sans-serif',fontWeight:600, fontSize: '20px'}}>Guided Tours</h5>
           <h6 className="display-6" style={{fontFamily:'Poppins,sans-serif', fontWeight:500, fontSize:'16px'}}>sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
@@ -35,7 +35,7 @@ function Services(){
         <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top:'11rem',right:"80%",visibility:'hidden'}}/>
         <div className="row-white-box position-relative" style={{marginTop:'-20px'}}>
           <img src={rect_158} alt="second-image" className="position-absolute mt-5 rectangle" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'30%'}}/>
-          <img src={travelling} alt="travelling" className="ms-5 travelling"/>
+          <img src={travelling} alt="travelling" className="ms-5 travelling" width="92" height="92"/>
           
           <h5 className="display-5" style={{fontFamily:'Poppins,sans-serif', fontWeight:600,fontSize: '20px'}}>Best Flights Options</h5>
           <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
@@ -47,7 +47,7 @@ function Services(){
         <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top: '10rem',right:'80%',visibility: 'hidden'}}/>
         <div className="row-white-box position-relative">
           <img src={rect_159} alt="second-image" className="position-absolute mt-5 rectangle1" style={{top:'auto', transform: 'translate(-50%,-50%)',zIndex:-1,left:'35%'}}/>
-          <img src={hands} alt="hands" className="ms-5 hands"/>
+          <img src={hands} alt="hands" className="ms-5 hands" width="66" height="66"/>
           
           <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize:'20px'}}>Religious Tours</h5>
           <h6 className="display-6" style={{fontFamily:'Poppins,sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe<br/> quo velit aperiam id<br/> aliquam placeat.</h6>
@@ -59,7 +59,7 @@ function Services(){
         <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top:'10rem',right:'80%',visibility:'hidden'}}/>
         <div className="row-white-box position-relative">
           <img src={rect_160} alt="second-image" className="position-absolute mt-5 rectangle2" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'35%'}}/>
-          <img src={medical_team} alt="hands" className="ms-5 medicalteam" />
+          <img src={medical_team} alt="hands" className="ms-5 medicalteam" width="72" height="72"/>
           
           <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize:'20px'}}>Religious Tours</h5>
           <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe<br/> quo velit aperiam id<br/> aliquam placeat.</h6>
@@ -77,7 +77,7 @@ function Services(){
         <div className="row-white-box position-relative text-center">
           
           <img src={second_img} alt="second-image" className="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
-          <img src={tour_guide} alt="travelling" className="ms-5 tour_guide"/>
+          <img src={tour_guide} alt="travelling" className="ms-5 tour_guide" width="72" height="72"/>
           
           <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600, fontSize: '20px'}}>Guided Tours</h5>
           <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500, fontSize: '16px'}}>sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
@@ -90,7 +90,7 @@ function Services(){
         <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden'}}/>
           <div className="row-white-box position-relative text-center" >
             <img src={rect_158} alt="second-image" className="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'54%'}}/>
-            <img src={travelling} alt="travelling" className="ms-5 travelling"/>
+            <img src={travelling} alt="travelling" className="ms-5 travelling" width="92" height="92"/>
             
             <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Best Flights Options</h5>
             <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
@@ -104,7 +104,7 @@ function Services(){
         <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden'}}/>
         <div className="row-white-box position-relative text-center">
           <img src={rect_159} alt="second-image" className="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
-          <img src={hands} alt="hands" className="ms-5 hands"/>
+          <img src={hands} alt="hands" className="ms-5 hands" width="66" height="66"/>
           
           <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Religious Tours</h5>
           <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe<br/> quo velit aperiam id<br/> aliquam placeat.</h6>
@@ -117,7 +117,7 @@ function Services(){
         <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden' }}/>
         <div className="row-white-box position-relative text-center">
           <img src={rect_160} alt="second-image" className="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
-          <img src={medical_team} alt="hands" className="ms-5 medical_team" />
+          <img src={medical_team} alt="hands" className="ms-5 medical_team" width="72" height="72"/>
           
           <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Religious Tours</h5>
           <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe<br/> quo velit aperiam id<br/> aliquam placeat.</h6>

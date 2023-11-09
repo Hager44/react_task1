@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react_task1/static/css/main.82ca0685.css",
-    "main.js": "/react_task1/static/js/main.94deae17.js",
+    "main.js": "/react_task1/static/js/main.508dbdef.js",
     "static/js/787.28cb0dcd.chunk.js": "/react_task1/static/js/787.28cb0dcd.chunk.js",
     "static/media/Rectangle_19290.webP": "/react_task1/static/media/Rectangle_19290.12344651418b367c08b2.webP",
     "static/media/Rectangle 19302.webP": "/react_task1/static/media/Rectangle 19302.e1e44a75546d6bfe54d0.webP",
     "static/media/Rectangle 19294.webP": "/react_task1/static/media/Rectangle 19294.22f784f0de9dc619e13a.webP",
     "static/media/Illustration (2).webP": "/react_task1/static/media/Illustration (2).be1b43af5c071c4f1208.webP",
-    "static/media/Illustration (1).webP": "/react_task1/static/media/Illustration (1).7a260b60df3f9ac29dbe.webP",
+    "static/media/Illustration(1)_new.webP": "/react_task1/static/media/Illustration(1)_new.7a260b60df3f9ac29dbe.webP",
     "static/media/Rectangle 19301.webP": "/react_task1/static/media/Rectangle 19301.6c302a96db1787168f19.webP",
     "static/media/h1-background-img-1 1.webP": "/react_task1/static/media/h1-background-img-1 1.bc24c594995442f9c00d.webP",
     "static/media/Illustration(3).webP": "/react_task1/static/media/Illustration(3).9244c0a1898191487b83.webP",
@@ -23,11 +23,11 @@
     "static/media/Group 81.webP": "/react_task1/static/media/Group 81.9c9342af6b3274ea5145.webP",
     "index.html": "/react_task1/index.html",
     "main.82ca0685.css.map": "/react_task1/static/css/main.82ca0685.css.map",
-    "main.94deae17.js.map": "/react_task1/static/js/main.94deae17.js.map",
+    "main.508dbdef.js.map": "/react_task1/static/js/main.508dbdef.js.map",
     "787.28cb0dcd.chunk.js.map": "/react_task1/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.82ca0685.css",
-    "static/js/main.94deae17.js"
+    "static/js/main.508dbdef.js"
   ]
 }

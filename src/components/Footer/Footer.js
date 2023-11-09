@@ -15,7 +15,7 @@ return(
     <div className="d-none d-lg-flex justify-content-around">
       <div className="travel">
         <p className="position-relative" style={{color:'#181E4B',fontFamily:'Volkhov, sans-serif', fontWeight:700,fontSize:'32px'}}>Travel</p>
-        <img src={arrow} alt="arrow" className="position-absolute ms-4 travel-arrow" style={{marginTop:'-3%'}}/>
+        <img src={arrow} alt="arrow" className="position-absolute ms-4 travel-arrow" style={{marginTop:'-3%'}} width="108" height="39"/>
         <p style={{color: '#757095',fontFamily: 'Manrope, sans-serif',fontWeight:500,fontSize:'16px'}} className="mt-4">Travel helps companies manage<br/> payments easily.</p>
         <div className="mt-3">
           <a href="#" className="me-2"><img src={linkdin} alt="linkedin" width="22" height="20"/></a>
@@ -57,7 +57,7 @@ return(
     <div className="d-lg-none text-center mt-5">
       <div className="travel mx-auto">
         <p style={{color: '#181E4B', fontFamily: 'Volkhov, sans-serif', fontWeight: 700}}>Travel</p>
-        <img src={arrow} alt="arrow" className="ms-4 travel-arrow" style={{marginTop: '-3%'}}/>
+        <img src={arrow} alt="arrow" className="ms-4 travel-arrow" style={{marginTop: '-3%'}} width="108" height="39"/>
         <p style={{color: '#757095', fontFamily: 'Manrope, sans-serif', fontWeight: 500,  marginTop:'1rem'}}>Travel helps companies manage payments easily.</p>
         <div className="mt-3">
         <a href="#" className="me-2"><img src={linkdin} alt="linkedin" width="22" height="20"/></a>
@@ -90,7 +90,7 @@ return(
       </div>
     </div>
   </div>
-  <img src={rectangle97} alt="line-hr" style={{marginTop: '2rem'}} className="d-lg-block"/>
+  <img src={rectangle97} alt="line-hr" style={{marginTop: '2rem'}} className="d-lg-block" width="1309" height="2"/>
   <p className="" style={{color: '#181433', fontFamily: 'Manrope, sans-serif', fontWeight: 500, fontSize: '16px', textAlign: 'center'}} >Copyright @ Xpro 2022. All Rights Reserved.</p>
 </section>
 );
