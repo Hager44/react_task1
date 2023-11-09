@@ -380,22 +380,22 @@ const[deleteall,setdeleteall]=useState(false);
   }
 
   return (
-    <div class="container">
+    <div className="container">
 <div style={{display:"flex",justifyContent:"space-around"}}>
-<button type="button"  onClick={handleAddClick} className="btn btn-primary my-3" data-bs-target="#exampleModal" data-bs-toggle="modal">
+<button type="button"  onClick={handleAddClick} classNameName="btn btn-primary my-3" data-bs-target="#exampleModal" data-bs-toggle="modal">
 Add new package
 </button>
-<button type='button' className="btn btn-danger mx-3 my-3" data-bs-target="#deleteModal"  data-bs-toggle="modal">delete all packages</button>
+<button type='button' classNameName="btn btn-danger mx-3 my-3" data-bs-target="#deleteModal"  data-bs-toggle="modal">delete all packages</button>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={modalRef}>
-  <div class="modal-dialog">
-    <div class="modal-content" style={{backgroundColor:'aliceblue'}}>
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{editItem ? `Editing ${newData.country} Package` : 'Adding New Package'}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={modalRef}>
+  <div className="modal-dialog">
+    <div className="modal-content" style={{backgroundColor:'aliceblue'}}>
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLabel">{editItem ? `Editing ${newData.country} Package` : 'Adding New Package'}</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div className="modal-body">
       {isAdding && (
         <div>
           <input
@@ -442,7 +442,7 @@ Add new package
             cols={50}
             rows={5}
           />
-          <label htmlFor='flag' className="mt-3">insert flag image: </label>
+          <label htmlFor='flag' classNameName="mt-3">insert flag image: </label>
           <input
            type="file"
            id='flag'
@@ -461,7 +461,7 @@ Add new package
              }
           />
           <br/>
-          <label htmlFor='countryimage' className="mt-3">insert symbol image:</label>
+          <label htmlFor='countryimage' classNameName="mt-3">insert symbol image:</label>
           <input
             type="file"
             id='countryimage'
@@ -474,7 +474,7 @@ Add new package
         </div>
       )}
       </div>
-      <div class="modal-footer">
+      <div className="modal-footer">
      
 
           <button data-bs-dismiss="modal" onClick={handleSaveClick} style={{marginLeft:'auto',marginRight:'auto'}}>{editItem ? 'Update' : 'Save'}</button>
@@ -484,17 +484,17 @@ Add new package
   </div>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" ref={modal2Ref}>
-  <div class="modal-dialog">
-    <div class="modal-content" style={{backgroundColor:'white'}}>
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">delete</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div className="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" ref={modal2Ref}>
+  <div className="modal-dialog">
+    <div className="modal-content" style={{backgroundColor:'white'}}>
+      <div className="modal-header">
+        <h5 className="modal-title" id="deleteModalLabel">delete</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div className="modal-body">
         are you sure you want to delete all packages?
       </div>
-      <div class="modal-footer">
+      <div className="modal-footer">
      
 
           <button data-bs-dismiss="modal" onClick={handleDeleteAllClick} >yes</button>

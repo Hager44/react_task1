@@ -1,6 +1,6 @@
 import React from "react";
 import './ImgGroup.css';
-import group from '../../New_folder/Group 81.png';
+import group from '../../New_folder/Group 81.webP';
 
 function ImgGroup(){
 return(

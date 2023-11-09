@@ -69,58 +69,58 @@ function Services(){
     </div>
   </div>
 </section>
-<section class="services d-md-none">
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-12 position-relative new">
-        <img src={rect_157} alt="rect" class="position-absolute new_rect" style={{top: '11rem', right: '69%', visibility: 'hidden'}}/>
-        <div class="row-white-box position-relative text-center">
+<section className="services d-md-none">
+  <div className="container mt-5">
+    <div className="row">
+      <div className="col-12 position-relative new">
+        <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top: '11rem', right: '69%', visibility: 'hidden'}}/>
+        <div className="row-white-box position-relative text-center">
           
-          <img src={second_img} alt="second-image" class="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
-          <img src={tour_guide} alt="travelling" class="ms-5 tour_guide"/>
+          <img src={second_img} alt="second-image" className="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
+          <img src={tour_guide} alt="travelling" className="ms-5 tour_guide"/>
           
-          <h5 class="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600, fontSize: '20px'}}>Guided Tours</h5>
-          <h6 class="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500, fontSize: '16px'}}>sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
+          <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600, fontSize: '20px'}}>Guided Tours</h5>
+          <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500, fontSize: '16px'}}>sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12 position-relative new">
-        <img src={rect_157} alt="rect" class="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden'}}/>
-          <div class="row-white-box position-relative text-center" >
-            <img src={rect_158} alt="second-image" class="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'54%'}}/>
-            <img src={travelling} alt="travelling" class="ms-5 travelling"/>
+    <div className="row">
+      <div className="col-12 position-relative new">
+        <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden'}}/>
+          <div className="row-white-box position-relative text-center" >
+            <img src={rect_158} alt="second-image" className="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'54%'}}/>
+            <img src={travelling} alt="travelling" className="ms-5 travelling"/>
             
-            <h5 class="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Best Flights Options</h5>
-            <h6 class="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
+            <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Best Flights Options</h5>
+            <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe quo velit aperiam id aliquam placeat.</h6>
           </div>
       </div>
     </div>
    
 
-    <div class="row">
-      <div class="col-12 position-relative new">
-        <img src={rect_157} alt="rect" class="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden'}}/>
-        <div class="row-white-box position-relative text-center">
-          <img src={rect_159} alt="second-image" class="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
-          <img src={hands} alt="hands" class="ms-5 hands"/>
+    <div className="row">
+      <div className="col-12 position-relative new">
+        <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden'}}/>
+        <div className="row-white-box position-relative text-center">
+          <img src={rect_159} alt="second-image" className="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
+          <img src={hands} alt="hands" className="ms-5 hands"/>
           
-          <h5 class="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Religious Tours</h5>
-          <h6 class="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe<br/> quo velit aperiam id<br/> aliquam placeat.</h6>
+          <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Religious Tours</h5>
+          <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe<br/> quo velit aperiam id<br/> aliquam placeat.</h6>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12 position-relative new">
-        <img src={rect_157} alt="rect" class="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden' }}/>
-        <div class="row-white-box position-relative text-center">
-          <img src={rect_160} alt="second-image" class="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
-          <img src={medical_team} alt="hands" class="ms-5 medical_team" />
+    <div className="row">
+      <div className="col-12 position-relative new">
+        <img src={rect_157} alt="rect" className="position-absolute new_rect" style={{top: '11rem',right:'69%',visibility: 'hidden' }}/>
+        <div className="row-white-box position-relative text-center">
+          <img src={rect_160} alt="second-image" className="position-absolute mt-5" style={{top:'auto', transform: 'translate(-50%, -50%)',zIndex:-1,left:'64%'}}/>
+          <img src={medical_team} alt="hands" className="ms-5 medical_team" />
           
-          <h5 class="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Religious Tours</h5>
-          <h6 class="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe<br/> quo velit aperiam id<br/> aliquam placeat.</h6>
+          <h5 className="display-5" style={{fontFamily:'Poppins, sans-serif', fontWeight:600,fontSize: '20px'}}>Religious Tours</h5>
+          <h6 className="display-6" style={{fontFamily:'Poppins, sans-serif', fontWeight:500,fontSize: '16px'}}>sunt qui repellat saepe<br/> quo velit aperiam id<br/> aliquam placeat.</h6>
         </div>
       </div>
     </div>
