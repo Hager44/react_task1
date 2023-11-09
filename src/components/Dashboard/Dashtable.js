@@ -382,13 +382,13 @@ const[deleteall,setdeleteall]=useState(false);
   return (
     <div className="container">
 <div style={{display:"flex",justifyContent:"space-around"}}>
-<button type="button"  onClick={handleAddClick} classNameName="btn btn-primary my-3" data-bs-target="#exampleModal" data-bs-toggle="modal">
+<button type="button"  onClick={handleAddClick} className="btn btn-primary my-3" data-bs-target="#exampleModal" data-bs-toggle="modal">
 Add new package
 </button>
-<button type='button' classNameName="btn btn-danger mx-3 my-3" data-bs-target="#deleteModal"  data-bs-toggle="modal">delete all packages</button>
+<button type='button' className="btn btn-danger mx-3 my-3" data-bs-target="#deleteModal"  data-bs-toggle="modal">delete all packages</button>
 </div>
 
-<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={modalRef}>
+<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={modalRef}>
   <div className="modal-dialog">
     <div className="modal-content" style={{backgroundColor:'aliceblue'}}>
       <div className="modal-header">
@@ -442,7 +442,7 @@ Add new package
             cols={50}
             rows={5}
           />
-          <label htmlFor='flag' classNameName="mt-3">insert flag image: </label>
+          <label htmlFor='flag' className="mt-3">insert flag image: </label>
           <input
            type="file"
            id='flag'
@@ -461,7 +461,7 @@ Add new package
              }
           />
           <br/>
-          <label htmlFor='countryimage' classNameName="mt-3">insert symbol image:</label>
+          <label htmlFor='countryimage' className="mt-3">insert symbol image:</label>
           <input
             type="file"
             id='countryimage'
@@ -484,7 +484,7 @@ Add new package
   </div>
 </div>
 
-<div className="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" ref={modal2Ref}>
+<div className="modal fade" id="deleteModal" tabIndex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" ref={modal2Ref}>
   <div className="modal-dialog">
     <div className="modal-content" style={{backgroundColor:'white'}}>
       <div className="modal-header">

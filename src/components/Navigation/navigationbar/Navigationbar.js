@@ -54,7 +54,7 @@ function Navigationbar(){
         <div>
              <div className="row ms-1">
              <div className="col">
-              <img src={arrow} alt="arrow" className="img-fluid"/>
+              <img src={arrow} alt="arrow" className="img-fluid" width="99" height="39"/>
              </div>
              </div>
             </div>

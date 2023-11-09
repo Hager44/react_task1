@@ -16,7 +16,7 @@ return(
       <div className="container ">
         <div className="row">
           <div className="col ms-n5">
-          <img src={iconImage} alt="an icon" className="img-fluid"/>
+          <img src={iconImage} alt="an icon" className="img-fluid" width="84" height="18"/>
           </div>
         </div>
         <div className="row">

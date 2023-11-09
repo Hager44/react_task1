@@ -18,10 +18,10 @@ return(
         <img src={arrow} alt="arrow" className="position-absolute ms-4 travel-arrow" style={{marginTop:'-3%'}}/>
         <p style={{color: '#757095',fontFamily: 'Manrope, sans-serif',fontWeight:500,fontSize:'16px'}} className="mt-4">Travel helps companies manage<br/> payments easily.</p>
         <div className="mt-3">
-          <a href="#" className="me-2"><img src={linkdin} alt="linkedin"/></a>
-          <a href="#" className="me-2"><img src={messenger} alt="messenger"/></a>
-          <a href="#" className="me-2"><img src={twitter} alt="twitter"/></a>
-          <a href="#" className="me-2"><img src={infinity} alt="infinity"/></a>
+          <a href="#" className="me-2"><img src={linkdin} alt="linkedin" width="22" height="20"/></a>
+          <a href="#" className="me-2"><img src={messenger} alt="messenger" width="23" height="20"/></a>
+          <a href="#" className="me-2"><img src={twitter} alt="twitter" width="23" height="18"/></a>
+          <a href="#" className="me-2"><img src={infinity} alt="infinity" width="23" height="12"/></a>
         </div>
       </div>
 
@@ -60,10 +60,10 @@ return(
         <img src={arrow} alt="arrow" className="ms-4 travel-arrow" style={{marginTop: '-3%'}}/>
         <p style={{color: '#757095', fontFamily: 'Manrope, sans-serif', fontWeight: 500,  marginTop:'1rem'}}>Travel helps companies manage payments easily.</p>
         <div className="mt-3">
-          <a href="#" className="me-2"><img src={linkdin} alt="linkedin"/></a>
-          <a href="#" className="me-2"><img src={messenger} alt="messenger"/></a>
-          <a href="#" className="me-2"><img src={twitter} alt="twitter"/></a>
-          <a href="#" className="me-2"><img src={infinity} alt="infinity"/></a>
+        <a href="#" className="me-2"><img src={linkdin} alt="linkedin" width="22" height="20"/></a>
+          <a href="#" className="me-2"><img src={messenger} alt="messenger" width="23" height="20"/></a>
+          <a href="#" className="me-2"><img src={twitter} alt="twitter" width="23" height="18"/></a>
+          <a href="#" className="me-2"><img src={infinity} alt="infinity" width="23" height="12"/></a>
         </div>
       </div>
       <div className="destinations mx-auto mt-5">
