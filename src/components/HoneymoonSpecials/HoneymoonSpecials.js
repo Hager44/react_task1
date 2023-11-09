@@ -1,6 +1,6 @@
 import React from "react";
 import './HoneymoonSpecials.css';
-import honeymoon from "../New_folder/Illustration.png";
+import honeymoon from "../New_folder/Illustration(3).webP";
 
 function HoneymoonSpecials(){
 return(
@@ -8,7 +8,7 @@ return(
   <div className="container">
     <div className="row align-items-center">
       <div className="col-lg-6 mt-5">
-        <img src={honeymoon} alt="honeymoon" className="img-fluid honeymoon-photo"/>
+        <img src={honeymoon} alt="honeymoon" className="img-fluid honeymoon-photo" width="762" height="744"/>
       </div>
       <div className="col-lg-6 col-12 ps-5 pe-5 honeymoon-text">
         <h6 className="d-flex display-6  mt-5 pt-5 pb-2  lead honeymoon-specials" style={{fontFamily:'Poppins,sans-serif', fontWeight:700,fontSize: '18px',color:'#DF6951'}}>Honeymoon Specials</h6>

@@ -21,6 +21,7 @@ function DataTable() {
   const imagesListRef = ref(storage, 'images/');
   const [isediting,setIsEditing]=useState(false);
   const modalRef = useRef(null);//to refrence modal from more than one place (for opening it)
+  const modal2Ref=useRef(null);
   const [previewImageUrl, setPreviewImageUrl] = useState('');//is defined to force re-render of component after inserting new package
 const[deleteall,setdeleteall]=useState(false);
   
@@ -278,7 +279,7 @@ const[deleteall,setdeleteall]=useState(false);
   
     deleteObject(imageRef)
       .then(() => {
-        // If image deletion is successful delete the data from the API
+        
         toast.success('Image deleted from Firebase Storage!', {
           position: 'top-center',
           autoClose: 5000,
@@ -289,7 +290,7 @@ const[deleteall,setdeleteall]=useState(false);
           progress: undefined,
           theme: 'light',
         });
-        
+        // If image deletion is successful delete the data from the API
         axios
           .delete(`https://651561a7dc3282a6a3ce4da8.mockapi.io/travel_Tours/${item.id}`)
           .then(() => {
@@ -317,7 +318,7 @@ const[deleteall,setdeleteall]=useState(false);
      
       });
   };
-  
+  //is called when delete all button is clicked 
   const handleDeleteAllClick = async () => {
     setdeleteall(true); 
     try {
@@ -384,7 +385,7 @@ const[deleteall,setdeleteall]=useState(false);
 <button type="button"  onClick={handleAddClick} className="btn btn-primary my-3" data-bs-target="#exampleModal" data-bs-toggle="modal">
 Add new package
 </button>
-<button type='button' onClick={handleDeleteAllClick} className="btn btn-danger mx-3 my-3">delete all packages</button>
+<button type='button' className="btn btn-danger mx-3 my-3" data-bs-target="#deleteModal"  data-bs-toggle="modal">delete all packages</button>
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={modalRef}>
@@ -483,7 +484,25 @@ Add new package
   </div>
 </div>
 
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" ref={modal2Ref}>
+  <div class="modal-dialog">
+    <div class="modal-content" style={{backgroundColor:'white'}}>
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        are you sure you want to delete all packages?
+      </div>
+      <div class="modal-footer">
+     
 
+          <button data-bs-dismiss="modal" onClick={handleDeleteAllClick} >yes</button>
+          <button data-bs-dismiss="modal"  >no</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

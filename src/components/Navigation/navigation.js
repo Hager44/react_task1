@@ -1,6 +1,6 @@
 import React from "react";
 import './Navigation.css';
-import backgroundImage from '..//New_folder/Rectangle_19290.png';
+import backgroundImage from '..//New_folder/Rectangle_19290.webP';
 
 import Navigationbar from "./navigationbar/Navigationbar";
 import Context from "./context/Context";
@@ -16,6 +16,7 @@ import Scroll from "./scroll/Scroll";
       backgroundPosition: 'center',
       height: '100vh',
       overflow: 'hidden',
+      maxWidth:'1920px',
     };
   
     

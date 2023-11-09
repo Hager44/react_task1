@@ -3,7 +3,7 @@ import './Trips.css';
 import group7 from "../New_folder/Group 7.png";
 import group12 from "../New_folder/Group 12.png";
 import group11 from "../New_folder/Group 11.png";
-import plane from "../New_folder/Illustration (1).png";
+import plane from "../New_folder/Illustration (1).webP";
 
 function Trips(){
 return(
