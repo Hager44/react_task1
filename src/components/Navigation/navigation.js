@@ -1,6 +1,6 @@
 import React from "react";
 import './Navigation.css';
-import backgroundImage from '..//New_folder/Rectangle_19290.webP';
+import backgroundImage from '..//New_folder/Rectangle_192901.webp';
 
 import Navigationbar from "./navigationbar/Navigationbar";
 import Context from "./context/Context";

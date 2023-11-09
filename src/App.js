@@ -7,7 +7,7 @@ import Read from './components/Dashboard/read';
 import DataTable from './components/Dashboard/Dashtable';
 import { ToastContainer } from 'react-toastify'; 
 import Navigationbar from './components/Navigation/navigationbar/Navigationbar';
-import backgroundImage from './components/New_folder/Rectangle_19290.webP';
+import backgroundImage from './components/New_folder/Rectangle_192901.webp';
 import Home from './Home';
 
 

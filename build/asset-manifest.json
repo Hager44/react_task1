@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react_task1/static/css/main.82ca0685.css",
-    "main.js": "/react_task1/static/js/main.508dbdef.js",
+    "main.js": "/react_task1/static/js/main.e2ba2b2d.js",
     "static/js/787.28cb0dcd.chunk.js": "/react_task1/static/js/787.28cb0dcd.chunk.js",
     "static/media/Rectangle_19290.webP": "/react_task1/static/media/Rectangle_19290.12344651418b367c08b2.webP",
     "static/media/Rectangle 19302.webP": "/react_task1/static/media/Rectangle 19302.e1e44a75546d6bfe54d0.webP",
@@ -23,11 +23,11 @@
     "static/media/Group 81.webP": "/react_task1/static/media/Group 81.9c9342af6b3274ea5145.webP",
     "index.html": "/react_task1/index.html",
     "main.82ca0685.css.map": "/react_task1/static/css/main.82ca0685.css.map",
-    "main.508dbdef.js.map": "/react_task1/static/js/main.508dbdef.js.map",
+    "main.e2ba2b2d.js.map": "/react_task1/static/js/main.e2ba2b2d.js.map",
     "787.28cb0dcd.chunk.js.map": "/react_task1/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.82ca0685.css",
-    "static/js/main.508dbdef.js"
+    "static/js/main.e2ba2b2d.js"
   ]
 }
