@@ -1,33 +1,33 @@
 {
   "files": {
-    "main.css": "/react_task1/static/css/main.a85eafea.css",
-    "main.js": "/react_task1/static/js/main.695c78c6.js",
+    "main.css": "/react_task1/static/css/main.21e6b435.css",
+    "main.js": "/react_task1/static/js/main.52574d52.js",
     "static/js/787.28cb0dcd.chunk.js": "/react_task1/static/js/787.28cb0dcd.chunk.js",
-    "static/media/Illustration (2).webP": "/react_task1/static/media/Illustration (2).be1b43af5c071c4f1208.webP",
-    "static/media/Illustration(1)_new.webP": "/react_task1/static/media/Illustration(1)_new.7a260b60df3f9ac29dbe.webP",
-    "static/media/h1-background-img-1 1.webP": "/react_task1/static/media/h1-background-img-1 1.bc24c594995442f9c00d.webP",
-    "static/media/Illustration(3).webP": "/react_task1/static/media/Illustration(3).9244c0a1898191487b83.webP",
+    "static/media/Illustration(1)_new.webp": "/react_task1/static/media/Illustration(1)_new.1597b787e605d3e48de7.webp",
     "static/media/Rectangle_192901.webp": "/react_task1/static/media/Rectangle_192901.9875a718b3224c8aed2a.webp",
     "static/media/Rectangle 19298.webP": "/react_task1/static/media/Rectangle 19298.e840e621595b4e98fd4a.webP",
-    "static/media/Travel_Concepts_2 1.webP": "/react_task1/static/media/Travel_Concepts_2 1.08dea8923ba1892fdf1c.webP",
     "static/media/Rectangle 19297.webP": "/react_task1/static/media/Rectangle 19297.dedbffd013bfdd554e3f.webP",
     "static/media/Rectangle 193022.webp": "/react_task1/static/media/Rectangle 193022.3a57bae4b333f6e16dde.webp",
     "static/media/Rectangle 19296.webP": "/react_task1/static/media/Rectangle 19296.4964bff335325e83684f.webP",
     "static/media/Rectangle 19295.webP": "/react_task1/static/media/Rectangle 19295.a8a3b19c0fe223453ae3.webP",
     "static/media/Footerimg.webP": "/react_task1/static/media/Footerimg.689e70836cb60fc0b071.webP",
+    "static/media/Illustration(3).webp": "/react_task1/static/media/Illustration(3).762316df0a2f9818907a.webp",
+    "static/media/Illustration (2).webp": "/react_task1/static/media/Illustration (2).478de8b022ffcc80ced9.webp",
     "static/media/CircularStd-Book.woff": "/react_task1/static/media/CircularStd-Book.b9b1abe339ba6639afff.woff",
     "static/media/Ellipse 624.webP": "/react_task1/static/media/Ellipse 624.e7531f015943dbdc0e9f.webP",
     "static/media/CircularStd-Book.woff2": "/react_task1/static/media/CircularStd-Book.da91211bb1fd4f1d09d8.woff2",
+    "static/media/Travel_Concepts_2 1.webp": "/react_task1/static/media/Travel_Concepts_2 1.58d2349c399d14430faf.webp",
     "static/media/Rectangle 193012.webp": "/react_task1/static/media/Rectangle 193012.2a74c64753e95653c2c2.webp",
+    "static/media/h1-background-img-1 1.webp": "/react_task1/static/media/h1-background-img-1 1.68123e2081a606928141.webp",
     "static/media/Rectangle 192942.webp": "/react_task1/static/media/Rectangle 192942.19265e4f6562f1a9ed31.webp",
     "static/media/Group 81.webP": "/react_task1/static/media/Group 81.9c9342af6b3274ea5145.webP",
     "index.html": "/react_task1/index.html",
-    "main.a85eafea.css.map": "/react_task1/static/css/main.a85eafea.css.map",
-    "main.695c78c6.js.map": "/react_task1/static/js/main.695c78c6.js.map",
+    "main.21e6b435.css.map": "/react_task1/static/css/main.21e6b435.css.map",
+    "main.52574d52.js.map": "/react_task1/static/js/main.52574d52.js.map",
     "787.28cb0dcd.chunk.js.map": "/react_task1/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a85eafea.css",
-    "static/js/main.695c78c6.js"
+    "static/css/main.21e6b435.css",
+    "static/js/main.52574d52.js"
   ]
 }
