@@ -1,6 +1,6 @@
 import React from "react";
 import './HoneymoonSpecials.css';
-import honeymoon from "../New_folder/Illustration(3).webP";
+import honeymoon from "../New_folder/Illustration(3).webp";
 
 function HoneymoonSpecials(){
 return(

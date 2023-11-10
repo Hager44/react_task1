@@ -14,23 +14,23 @@ function Airlines(){
         <section className="airlines bg-light bd-highlight" style={airline}>
     <div className="d-flex justify-content-center">
        <div className="p-5">
-        <img src={Fly_Emirates} alt="Fly Emirates"/>
+        <img src={Fly_Emirates} alt="Fly Emirates" width="144" height="50"/>
 
        </div>
        <div className="p-5">
-        <img src={tivago} alt="tivago"/>
+        <img src={tivago} alt="tivago" width="166" height="50"/>
        </div>
 
        <div className="p-5">
-        <img src={air_bnb} alt="air bnb"/>
+        <img src={air_bnb} alt="air bnb" width="161" height="50"/>
 
        </div>
        <div className="p-5">
-        <img src={turkish_airlines} alt="turkish airlines"/>
+        <img src={turkish_airlines} alt="turkish airlines" width="173" height="50"/>
 
        </div>
        <div className="p-5 text-right">
-        <img src={swiss} alt="swiss"/>
+        <img src={swiss} alt="swiss" width="222" height="50"/>
 
        </div>
 

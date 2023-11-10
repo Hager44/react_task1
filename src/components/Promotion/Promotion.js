@@ -7,7 +7,7 @@ import dollar_500 from "../New_folder/Group 1000001692.png";
 import rectangle19297 from "../New_folder/Rectangle 19297.webP";
 import dollar_600 from "../New_folder/Group 1000001693.png";
 import rectangle19298 from "../New_folder/Rectangle 19298.webP"; 
-import illustration from "../New_folder/Illustration (2).webP";
+import illustration from "../New_folder/Illustration (2).webp";
 import dollar_450 from "../New_folder/Group 1000001691.png";
 import rectangle19296 from"../New_folder/Rectangle 19296.webP";
 

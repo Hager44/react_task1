@@ -1,6 +1,6 @@
 import React from "react";
 import './Clients.css';
-import travel_concept from "../New_folder/Travel_Concepts_2 1.webP";
+import travel_concept from "../New_folder/Travel_Concepts_2 1.webp";
 import ellipse_624 from "../New_folder/Ellipse 624.webP";
 import vector_6 from "../New_folder/Vector (6).png";
 import ellipse_2 from "../New_folder/download.png";
