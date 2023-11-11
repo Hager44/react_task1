@@ -17,7 +17,7 @@ return(
         <img src={vector2} alt="" className="ms-4" width="20" height="18"/>
         <h6 className="display-6 d-inline ms-1" style={{color: '#7D7D7D',fontFamily:'Poppins, sans-serif', fontWeight: 400,fontSize: '16px'}}>{props.product.people} People going</h6>
         <div className="d-flex justify-content-between align-items-center ">
-        <a href="https://en.wikipedia.org/wiki/Bern" className="card-title country" style={{color:'#2F2F2F',fontFamily:'Poppins, sans-serif', fontWeight:700,fontSize:'29px',textDecoration: 'none'}}>{props.product.city}</a>
+        <a href="https://en.wikipedia.org/wiki/Bern" className="card-title country" style={{color:'#2F2F2F',fontFamily:'Poppins, sans-serif', fontWeight:700,fontSize:'29px',textDecoration: 'none'}} aria-label={`Visit the Wikipedia page for ${props.product.city}`}>{props.product.city}</a>
         <div className="d-inline ">
           <img src={star} alt="" width="16" height="16"/>
         <img src={star} alt="" width="16" height="16"/>
